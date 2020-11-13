@@ -62,11 +62,11 @@ where
 }
 
 #[derive(Debug)]
-pub(crate) struct OrtOwnedTensorExtractor<'m, D>
+pub struct OrtOwnedTensorExtractor<'m, D>
 where
     D: ndarray::Dimension,
 {
-    pub(crate) tensor_ptr: *mut sys::OrtValue,
+    pub tensor_ptr: *mut sys::OrtValue,
     memory_info: &'m MemoryInfo,
     shape: D,
 }
@@ -75,7 +75,7 @@ impl<'m, D> OrtOwnedTensorExtractor<'m, D>
 where
     D: ndarray::Dimension,
 {
-    pub(crate) fn new(memory_info: &'m MemoryInfo, shape: D) -> OrtOwnedTensorExtractor<'m, D> {
+    pub fn new(memory_info: &'m MemoryInfo, shape: D) -> OrtOwnedTensorExtractor<'m, D> {
         OrtOwnedTensorExtractor {
             tensor_ptr: std::ptr::null_mut(),
             memory_info,
@@ -83,7 +83,7 @@ where
         }
     }
 
-    pub(crate) fn extract<'t, T>(self) -> Result<OrtOwnedTensor<'t, 'm, T, D>>
+    pub fn extract<'t, T>(self) -> Result<OrtOwnedTensor<'t, 'm, T, D>>
     where
         T: TypeToTensorElementDataType + Debug + Clone,
     {

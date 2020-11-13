@@ -147,7 +147,7 @@ lazy_static! {
     };
 }
 
-fn g_ort() -> sys::OrtApi {
+pub fn g_ort() -> sys::OrtApi {
     let mut api_ref = G_ORT_API
         .lock()
         .expect("Failed to acquire lock: another thread panicked?");

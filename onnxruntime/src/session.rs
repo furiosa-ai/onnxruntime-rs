@@ -236,7 +236,7 @@ impl SessionBuilder {
 /// Type storing the session information, built from an [`Environment`](environment/struct.Environment.html)
 #[derive(Debug)]
 pub struct Session {
-    session_ptr: *mut sys::OrtSession,
+    pub session_ptr: *mut sys::OrtSession,
     allocator_ptr: *mut sys::OrtAllocator,
     pub memory_info: MemoryInfo,
     /// Information about the ONNX's inputs as stored in loaded file

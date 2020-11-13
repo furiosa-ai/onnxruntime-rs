@@ -175,7 +175,7 @@ impl From<OrtStatusWrapper> for std::result::Result<(), OrtApiError> {
     }
 }
 
-pub(crate) fn status_to_result(
+pub fn status_to_result(
     status: *const sys::OrtStatus,
 ) -> std::result::Result<(), OrtApiError> {
     let status_wrapper: OrtStatusWrapper = status.into();

@@ -124,7 +124,7 @@ use onnxruntime_sys as sys;
 pub mod download;
 pub mod environment;
 pub mod error;
-mod memory;
+pub mod memory;
 pub mod session;
 pub mod tensor;
 

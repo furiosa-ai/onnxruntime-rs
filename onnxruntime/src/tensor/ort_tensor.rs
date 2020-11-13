@@ -35,7 +35,7 @@ where
     T: TypeToTensorElementDataType + Debug + Clone,
     D: ndarray::Dimension,
 {
-    pub(crate) fn from_array<'m>(
+    pub fn from_array<'m>(
         memory_info: &'m MemoryInfo,
         mut array: Array<T, D>,
     ) -> Result<OrtTensor<'t, T, D>>

@@ -237,7 +237,7 @@ impl SessionBuilder {
 #[derive(Debug)]
 pub struct Session {
     pub session_ptr: *mut sys::OrtSession,
-    allocator_ptr: *mut sys::OrtAllocator,
+    pub allocator_ptr: *mut sys::OrtAllocator,
     pub memory_info: MemoryInfo,
     /// Information about the ONNX's inputs as stored in loaded file
     pub inputs: Vec<Input>,
